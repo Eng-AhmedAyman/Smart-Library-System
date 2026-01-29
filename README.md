@@ -120,6 +120,8 @@ AI & Data Science Engineer
 🔗 GitHub: [https://github.com/Eng-AhmedAyman]  
 🔗 LinkedIn: [www.linkedin.com/in/ahmed-ayman-10b966292]
 
+Passionate about bridging the gap between efficient algorithms and interactive visual experiences.
+
 ---
 
 ## 📄 License
