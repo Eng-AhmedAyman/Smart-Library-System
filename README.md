@@ -10,7 +10,7 @@
 
 ## 📸 Preview
 
-> _(Add a screenshot or GIF of the application dashboard here to make the repository more attractive)_
+![Smart Library Demo](demo.gif)
 
 ---
 
