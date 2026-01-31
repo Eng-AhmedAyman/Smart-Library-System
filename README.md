@@ -10,7 +10,7 @@
 
 ## 🎥 Project Demo (See it in Action!)
 
-![App Demo](Animation.gif)
+![App Demo](Smart_Library_Management_System.gif)
 *(The Smart Scanner in action: Automatically detecting availability and launching the borrow flow)*
 
 ---
