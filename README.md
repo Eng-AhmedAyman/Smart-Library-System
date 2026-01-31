@@ -15,7 +15,6 @@
 |----------------------|-----------------------|
 | ![Dashboard](Screenshot_Dashboard.png) | ![Scanner](Screenshot_Scanner.png) |
 
-> ⚠️ Replace the image paths with your actual screenshots.
 
 ---
 
