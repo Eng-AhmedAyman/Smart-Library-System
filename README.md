@@ -1,4 +1,4 @@
-# 📚 Smart Library Management System Pro
+# 📚 Smart Library Management System 
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-green?style=for-the-badge)
