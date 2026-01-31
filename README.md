@@ -3,18 +3,23 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)
 
 > **A modern, intelligent, and dark-themed desktop application for managing library operations with financial tracking and smart automation.**
 
 ---
 
-## 📸 Screenshots
+## 🎥 Project Demo (See it in Action!)
 
-| Interactive Dashboard | Smart Scanner & Audit |
-|----------------------|-----------------------|
+![App Demo](Animation.gif)
+*(The Smart Scanner in action: Automatically detecting availability and launching the borrow flow)*
+
+---
+
+## 📸 Static Screenshots
+
+| **Interactive Dashboard & Financials** | **Smart Scanner Logic** |
+|:-------------------------:|:-------------------------:|
 | ![Dashboard](Screenshot_Dashboard.png) | ![Scanner](Screenshot_Scanner.png) |
-
 
 ---
 
