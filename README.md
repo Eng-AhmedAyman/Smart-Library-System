@@ -127,6 +127,10 @@ python main.py
 
 ---
 
+## 📦 Downloads
+You can download the prebuilt Windows executable from the Latest Release:
+🔗 https://github.com/Eng-AhmedAyman/Smart-Library-System/releases
+
 ## 👤 Author
 
 **Eng. Ahmed Ayman**  
