@@ -129,6 +129,7 @@ python main.py
 
 - 🔗 LinkedIn: https://www.linkedin.com/in/ahmed-ayman-10b966292  
 - 💻 GitHub: https://github.com/Eng-AhmedAyman
+Passionate about bridging the gap between efficient algorithms and interactive visual experiences.
 
 ---
 
@@ -139,3 +140,5 @@ This project is licensed under the **MIT License**.
 ---
 
 🚀 *Built with passion and Python by Ahmed Ayman.*
+⭐ If you like this project, don't forget to give it a star on GitHub!
+
