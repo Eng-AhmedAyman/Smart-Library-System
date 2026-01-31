@@ -1,133 +1,142 @@
-# 📚 Smart Library Management System
+# 📚 Smart Library Management System Pro
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
 ![GUI](https://img.shields.io/badge/GUI-CustomTkinter-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)
 
-> A modern, modular Desktop Application for Library Management, built with Python and Object-Oriented Programming principles.
+> **A modern, intelligent, and dark-themed desktop application for managing library operations with financial tracking and smart automation.**
 
 ---
 
-## 📸 Preview
+## 📸 Screenshots
 
-![Smart Library Demo](demo.gif)
+| Interactive Dashboard | Smart Scanner & Audit |
+|----------------------|-----------------------|
+| ![Dashboard](Screenshot_Dashboard.png) | ![Scanner](Screenshot_Scanner.png) |
 
----
-
-## 🚀 Overview
-
-**Smart Library System** is a desktop application that simulates a real-world library environment.  
-Unlike basic CRUD systems, this project implements real **business logic** for book circulation, **automated fine calculation**, and a **modern dark-mode GUI**.
-
-It demonstrates practical usage of:
-
-- Object-Oriented Programming (OOP)
-- Modular Architecture
-- MVC-inspired Design
-- Data Persistence using JSON
+> ⚠️ Replace the image paths with your actual screenshots.
 
 ---
 
-## ✨ Key Features
+## 🚀 Key Features
 
-- 🎨 **Modern Dark UI**  
-  Built with `CustomTkinter` for a clean and eye-friendly user experience.
+This project goes beyond basic CRUD operations and simulates a **real-world library business system**:
 
-- 🔍 **Dynamic Search**  
-  Real-time filtering by **Title**, **Author**, or **ISBN**.
+- 🔫 **Smart ISBN Scanner**
+  - One scan (or Enter key) automatically decides:
+    - Borrow a book if available
+    - Return a book if already borrowed
 
-- 🧠 **Smart Library Logic**
-  - Auto-generated due dates (7-day borrowing policy)
-  - Automatic fine calculation (50 EGP per late day)
-  - Visual status indicators:
-    - 🟢 Available
-    - 🟠 Borrowed
-    - 🔴 Late
+- 💰 **Financial Logic Engine**
+  - Automatic overdue fine calculation (**50 EGP per day**)
+  - Prevents book return until fines are confirmed paid
+  - Full financial history stored in audit logs
 
-- 💾 **Data Persistence**  
-  All records are stored in `library_data.json` — no external database required.
+- 🎨 **Modern Dark UI**
+  - Built with **CustomTkinter**
+  - Clean, professional, and eye-friendly dark theme
 
-- 📂 **Modular Code Structure**  
-  Clean separation between GUI, Logic, and Data Models.
+- 🛡️ **Robust Validation System**
+  - Prevents duplicate ISBN entries
+  - Validates phone numbers and user input
+  - Protects borrowed books from accidental deletion
+
+- 📊 **Audit Logging**
+  - Permanent transaction history
+  - Logs all borrow/return operations with:
+    - Timestamp
+    - User details
+    - Book details
+
+- 🔢 **Auto-Increment User IDs**
+  - Automatically generates unique borrower IDs
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology    | Description                  |
-| ------------- | ---------------------------- |
-| Python        | Core programming language    |
-| CustomTkinter | GUI Framework                |
-| JSON          | Data Storage                 |
-| Datetime      | Due date & fine calculations |
-| OOP           | Project Design Pattern       |
+- **Programming Language:** Python 🐍
+- **GUI Framework:** CustomTkinter
+- **Data Storage:** JSON (Lightweight & portable)
+- **Image Handling:** Pillow (PIL)
+- **Design Concepts:**
+  - Object-Oriented Programming (OOP)
+  - MVC Architecture
+  - File Handling
+  - Algorithmic Logic
 
 ---
 
 ## 📂 Project Structure
 
-```
+```text
 Smart-Library-System/
 │
-├── main.py             # Application Entry Point
-├── gui.py              # Frontend (CustomTkinter UI)
-├── system.py           # Backend Controller (Borrow/Return Logic)
-├── book.py             # Data Model (Book Class)
-├── library_data.json   # JSON Database File
-└── README.md           # Project Documentation
+├── main.py              # Application entry point
+├── system.py            # Backend logic & controller
+├── gui.py               # CustomTkinter GUI
+├── book.py              # Book model
+├── borrow_record.py     # Borrow transaction model
+│
+├── library_data.json    # Books database
+├── borrow.json          # Borrow & return logs
+│
+├── logoo.jpg            # Application logo
+├── requirements.txt     # Dependencies
+└── README.md            # Documentation
 ```
 
 ---
 
-## 💻 Installation & Usage
+## ⚡ Quick Start
 
-### 1️⃣ Clone the repository
-
+### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Eng-AhmedAyman/Smart-Library-System.git
+git clone https://github.com/YOUR_USERNAME/Smart-Library-System.git
 cd Smart-Library-System
 ```
 
-### 2️⃣ Install dependencies
-
+### 2️⃣ Install Dependencies
 ```bash
-pip install customtkinter
+pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the application
-
+### 3️⃣ Run the Application
 ```bash
 python main.py
 ```
 
 ---
 
-## 🎯 Future Improvements
+## 🧠 How It Works
 
-- User authentication system
-- Admin & Librarian roles
-- Export reports to PDF
-- SQLite database integration
-- Online book reservation system
+### 🔍 Smart Scan Logic
+1. Enter ISBN
+2. System checks book status:
+   - **Available** → Opens Borrow Form (auto-fills next User ID)
+   - **Borrowed** → Checks due date → Calculates fine → Requests payment → Returns book
+
+### 💾 Data Persistence
+- All data is saved instantly to `.json` files
+- Close the app anytime — data and fines remain محفوظة ✔️
 
 ---
 
 ## 👤 Author
 
-**Ahmed Ayman**  
-AI & Data Science Engineer
+**Eng. Ahmed Ayman**  
+**AI & Data Science Engineer**
 
-🔗 GitHub: [https://github.com/Eng-AhmedAyman]  
-🔗 LinkedIn: [www.linkedin.com/in/ahmed-ayman-10b966292]
-
-Passionate about bridging the gap between efficient algorithms and interactive visual experiences.
+- 🔗 LinkedIn: https://www.linkedin.com/in/ahmed-ayman-10b966292  
+- 💻 GitHub: https://github.com/Eng-AhmedAyman
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — feel free to use and modify it.
+This project is licensed under the **MIT License**.
 
 ---
 
-⭐ If you like this project, don't forget to give it a star on GitHub!
+🚀 *Built with passion and Python by Ahmed Ayman.*
