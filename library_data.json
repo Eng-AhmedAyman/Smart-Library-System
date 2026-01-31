@@ -1,0 +1,323 @@
+[
+
+    {
+
+        "title": "Clean Code",
+
+        "author": "Robert C. Martin",
+
+        "isbn": "1001",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "The Pragmatic Programmer",
+
+        "author": "Andrew Hunt",
+
+        "isbn": "1002",
+
+        "is_available": false,
+
+        "borrow_man": "Ahmed Ali",
+
+        "borrow_date": "2025-12-01"
+
+    },
+
+    {
+
+        "title": "Design Patterns",
+
+        "author": "Erich Gamma",
+
+        "isbn": "1003",
+
+        "is_available": false,
+
+        "borrow_man": "Mona Hassan",
+
+        "borrow_date": "2026-01-10"
+
+    },
+
+    {
+
+        "title": "Introduction to Algorithms",
+
+        "author": "Thomas H. Cormen",
+
+        "isbn": "1004",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Artificial Intelligence: A Modern Approach",
+
+        "author": "Stuart Russell",
+
+        "isbn": "1005",
+
+        "is_available": false,
+
+        "borrow_man": "Omar Khaled",
+
+        "borrow_date": "2026-01-29"
+
+    },
+
+    {
+
+        "title": "Python Crash Course",
+
+        "author": "Eric Matthes",
+
+        "isbn": "1006",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Deep Learning",
+
+        "author": "Ian Goodfellow",
+
+        "isbn": "1007",
+
+        "is_available": false,
+
+        "borrow_man": "Sara Mohamed",
+
+        "borrow_date": "2026-01-15"
+
+    },
+
+    {
+
+        "title": "Computer Networks",
+
+        "author": "Andrew S. Tanenbaum",
+
+        "isbn": "1008",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Operating System Concepts",
+
+        "author": "Abraham Silberschatz",
+
+        "isbn": "1009",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Database System Concepts",
+
+        "author": "Henry F. Korth",
+
+        "isbn": "1010",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "The Clean Coder",
+
+        "author": "Robert C. Martin",
+
+        "isbn": "1011",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Refactoring",
+
+        "author": "Martin Fowler",
+
+        "isbn": "1012",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Head First Design Patterns",
+
+        "author": "Eric Freeman",
+
+        "isbn": "1013",
+
+        "is_available": false,
+
+        "borrow_man": "Youssef Adel",
+
+        "borrow_date": "2026-01-25"
+
+    },
+
+    {
+
+        "title": "Grokking Algorithms",
+
+        "author": "Aditya Bhargava",
+
+        "isbn": "1014",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Soft Skills",
+
+        "author": "John Sonmez",
+
+        "isbn": "1015",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "The Mythical Man-Month",
+
+        "author": "Fred Brooks",
+
+        "isbn": "1016",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Code Complete",
+
+        "author": "Steve McConnell",
+
+        "isbn": "1017",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Effective Java",
+
+        "author": "Joshua Bloch",
+
+        "isbn": "1018",
+
+        "is_available": false,
+
+        "borrow_man": "Hassan Ibrahim",
+
+        "borrow_date": "2025-11-20"
+
+    },
+
+    {
+
+        "title": "Cracking the Coding Interview",
+
+        "author": "Gayle Laakmann",
+
+        "isbn": "1019",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    },
+
+    {
+
+        "title": "Harry Potter and the Philosopher's Stone",
+
+        "author": "J.K. Rowling",
+
+        "isbn": "1020",
+
+        "is_available": true,
+
+        "borrow_man": null,
+
+        "borrow_date": null
+
+    }
+
+] 

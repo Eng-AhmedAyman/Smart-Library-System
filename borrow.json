@@ -1,0 +1,83 @@
+[
+    {
+        "isbn": "1001",
+        "user_id": "201",
+        "name": "Ali Mostafa",
+        "phone": "01012345678",
+        "borrow_date": "2026-01-01",
+        "returned": true,
+        "fine": 0
+    },
+    {
+        "isbn": "1002",
+        "user_id": "202",
+        "name": "Ahmed Ali",
+        "phone": "01123456789",
+        "borrow_date": "2025-12-01",
+        "returned": false,
+        "fine": 0
+    },
+    {
+        "isbn": "1003",
+        "user_id": "203",
+        "name": "Mona Hassan",
+        "phone": "01234567890",
+        "borrow_date": "2026-01-10",
+        "returned": false,
+        "fine": 0
+    },
+    {
+        "isbn": "1008",
+        "user_id": "204",
+        "name": "Mahmoud Saeed",
+        "phone": "01098765432",
+        "borrow_date": "2026-01-01",
+        "returned": true,
+        "fine": 150
+    },
+    {
+        "isbn": "1005",
+        "user_id": "205",
+        "name": "Omar Khaled",
+        "phone": "01111222333",
+        "borrow_date": "2026-01-29",
+        "returned": false,
+        "fine": 0
+    },
+    {
+        "isbn": "1007",
+        "user_id": "206",
+        "name": "Sara Mohamed",
+        "phone": "01222334455",
+        "borrow_date": "2026-01-15",
+        "returned": false,
+        "fine": 0
+    },
+    {
+        "isbn": "1006",
+        "user_id": "207",
+        "name": "Nour Tarek",
+        "phone": "01033445566",
+        "borrow_date": "2026-01-25",
+        "returned": true,
+        "fine": 0
+    },
+    {
+        "isbn": "1013",
+        "user_id": "208",
+        "name": "Youssef Adel",
+        "phone": "01055566677",
+        "borrow_date": "2026-01-25",
+        "returned": false,
+        "fine": 0
+    },
+    {
+        "isbn": "1018",
+        "user_id": "209",
+        "name": "Hassan Ibrahim",
+        "phone": "01288899900",
+        "borrow_date": "2025-11-20",
+        "returned": false,
+        "fine": 0
+    }
+]
