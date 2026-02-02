@@ -4,11 +4,17 @@ from datetime import date, timedelta
 from system import LibrarySystem
 from PIL import Image, ImageTk
 
+# Standard Theme Configuration
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("dark-blue")
 
 
 class LibraryApp(ctk.CTk):
+    """
+    Main Application Class for the Smart Library Management System.
+    Handles the GUI layout, navigation between views, and user interactions.
+    """
+
     def __init__(self):
         super().__init__()
 
@@ -16,21 +22,21 @@ class LibraryApp(ctk.CTk):
         self.geometry("1150x700")
         self.library = LibrarySystem()
 
-        # 🔥 إعداد أيقونة التطبيق (Logo)
+        # --- Application Icon (Logo) Setup ---
         try:
             icon_img = Image.open("logoo.jpg")
             self.iconphoto(False, ImageTk.PhotoImage(icon_img))
-        except:
+        except Exception:
             pass
 
         self.grid_columnconfigure(1, weight=1)
         self.grid_rowconfigure(0, weight=1)
 
-        # ---------- Sidebar ----------
+        # ---------- Sidebar Navigation ----------
         self.sidebar = ctk.CTkFrame(self, width=200, corner_radius=0)
         self.sidebar.grid(row=0, column=0, sticky="nsew")
 
-        # عرض اللوجو داخل القائمة
+        # Sidebar Logo Display
         try:
             my_image = ctk.CTkImage(
                 light_image=Image.open("logoo.jpg"),
@@ -38,7 +44,7 @@ class LibraryApp(ctk.CTk):
                 size=(100, 100),
             )
             ctk.CTkLabel(self.sidebar, text="", image=my_image).pack(pady=(30, 10))
-        except:
+        except Exception:
             pass
 
         ctk.CTkLabel(
@@ -47,19 +53,21 @@ class LibraryApp(ctk.CTk):
             font=ctk.CTkFont(size=20, weight="bold"),
         ).pack(pady=(0, 20))
 
+        # Navigation Buttons
         self.add_nav_btn("Dashboard", "dashboard")
         self.add_nav_btn("Add Books", "manage")
-        self.add_nav_btn("Smart Scanner", "borrow")  # اسم جديد
+        self.add_nav_btn("Smart Scanner", "borrow")
         self.add_nav_btn("Borrowers Log", "borrowers")
 
-        # ---------- Main Area ----------
+        # ---------- Main Content Area ----------
         self.main_frame = ctk.CTkFrame(self, corner_radius=10)
         self.main_frame.grid(row=0, column=1, sticky="nsew", padx=20, pady=20)
 
         self.show_frame("dashboard")
 
-    # ---------- Navigation ----------
+    # ---------- Navigation Logic ----------
     def add_nav_btn(self, text, view):
+        """Creates a standardized navigation button in the sidebar."""
         ctk.CTkButton(
             self.sidebar,
             text=text,
@@ -71,6 +79,7 @@ class LibraryApp(ctk.CTk):
         ).pack(pady=10, padx=20, fill="x")
 
     def show_frame(self, name):
+        """Clears the main frame and switches to the requested view."""
         for w in self.main_frame.winfo_children():
             w.destroy()
         if name == "dashboard":
@@ -82,8 +91,9 @@ class LibraryApp(ctk.CTk):
         elif name == "borrowers":
             self.create_borrowers()
 
-    # ---------- Dashboard ----------
+    # ---------- Dashboard View ----------
     def create_dashboard(self):
+        """Constructs the dashboard view with live statistics and a searchable book list."""
         top = ctk.CTkFrame(self.main_frame, fg_color="transparent")
         top.pack(fill="x", pady=10, padx=20)
 
@@ -104,7 +114,7 @@ class LibraryApp(ctk.CTk):
         self.stats_area.pack(fill="x", pady=10, padx=20)
         self.refresh_stats()
 
-        # شريط السياسة
+        # Policy Notification Bar
         policy_frame = ctk.CTkFrame(
             self.main_frame, fg_color="#4a2c04", corner_radius=5, height=35
         )
@@ -133,10 +143,10 @@ class LibraryApp(ctk.CTk):
 
         self.scroll = ctk.CTkScrollableFrame(self.main_frame)
         self.scroll.pack(fill="both", expand=True, padx=20, pady=10)
-
         self.update_list()
 
     def refresh_stats(self):
+        """Calculates and refreshes library totals and availability metrics."""
         for w in self.stats_area.winfo_children():
             w.destroy()
         total = len(self.library.books)
@@ -157,6 +167,7 @@ class LibraryApp(ctk.CTk):
             ).place(relx=0.5, rely=0.7, anchor="center")
 
     def update_list(self, *args):
+        """Filters the book list based on user search queries."""
         for w in self.scroll.winfo_children():
             w.destroy()
         term = self.search_var.get().lower()
@@ -169,10 +180,10 @@ class LibraryApp(ctk.CTk):
                 self.draw_row(book)
 
     def draw_row(self, book):
+        """Renders an individual book row with status indicators and action buttons."""
         row = ctk.CTkFrame(self.scroll, fg_color="transparent")
         row.pack(fill="x", pady=4, padx=5)
 
-        # Truncate Long Text
         display_title = book.title[:27] + "..." if len(book.title) > 30 else book.title
         display_author = (
             book.author[:15] + "..." if len(book.author) > 18 else book.author
@@ -188,7 +199,7 @@ class LibraryApp(ctk.CTk):
             side="left", padx=5
         )
 
-        # Status Logic
+        # Dynamic Status and Fine Calculation
         if book.is_available:
             status_txt, status_col = "🟢 Available", "#2cc985"
         else:
@@ -215,7 +226,7 @@ class LibraryApp(ctk.CTk):
             font=("Arial", 12, "bold"),
         ).pack(side="left", padx=5)
 
-        # Actions Buttons
+        # Action Buttons (Borrow/Return and Delete)
         actions_frame = ctk.CTkFrame(row, fg_color="transparent")
         actions_frame.pack(side="left", padx=5)
 
@@ -238,6 +249,7 @@ class LibraryApp(ctk.CTk):
         ).pack(side="left", padx=2)
 
     def delete_action(self, book):
+        """Prompts user for deletion and removes the book from the library database."""
         if messagebox.askyesno(
             "Delete", f"Are you sure you want to delete '{book.title}'?"
         ):
@@ -249,20 +261,18 @@ class LibraryApp(ctk.CTk):
                 messagebox.showerror("Error", msg)
 
     def quick_action(self, book):
+        """Handles immediate borrow/return logic, including overdue fine confirmation."""
         if book.is_available:
             self.borrow_popup(book)
         else:
-            # 🔥 Payment Confirmation Logic
             due_date = (
                 book.borrow_date + timedelta(days=7)
                 if book.borrow_date
                 else date.today()
             )
             days_left = (due_date - date.today()).days
-
             if days_left < 0:
                 fine = abs(days_left) * 50
-                # السؤال عن الدفع
                 confirm = messagebox.askyesno(
                     "💰 Fine Payment",
                     f"User is late by {abs(days_left)} days.\nFine Amount: {fine} EGP\n\nHas the user paid?",
@@ -276,6 +286,7 @@ class LibraryApp(ctk.CTk):
                 self.refresh_ui()
 
     def borrow_popup(self, book):
+        """Opens a top-level window to gather borrower details with auto-incrementing ID."""
         win = ctk.CTkToplevel(self)
         win.geometry("400x400")
         win.title("Borrow Details")
@@ -284,7 +295,6 @@ class LibraryApp(ctk.CTk):
             win, text=f"Borrowing: {book.title}", font=("Arial", 16, "bold")
         ).pack(pady=20)
 
-        # 🔥 Auto-Increment ID
         next_id = 101
         ids = [
             int(r.user_id)
@@ -320,11 +330,13 @@ class LibraryApp(ctk.CTk):
         )
 
     def refresh_ui(self):
+        """Refreshes statistics and lists across the UI."""
         self.refresh_stats()
         self.update_list()
 
-    # ---------- Add Book ----------
+    # ---------- Manage Books View ----------
     def create_manage(self):
+        """Interface for manually adding new book records to the library."""
         ctk.CTkLabel(self.main_frame, text="Add New Book", font=("Arial", 24)).pack(
             pady=20
         )
@@ -339,6 +351,7 @@ class LibraryApp(ctk.CTk):
         )
 
     def save_book(self):
+        """Validates and saves a new book via the LibrarySystem controller."""
         if self.e_t.get() and self.e_i.get():
             ok, msg = self.library.add_book(
                 self.e_t.get(), self.e_a.get(), self.e_i.get()
@@ -351,8 +364,9 @@ class LibraryApp(ctk.CTk):
         else:
             messagebox.showwarning("Error", "Missing Data")
 
-    # ---------- Smart Scanner (The New Manual Scan) ----------
+    # ---------- Smart ISBN Scanner View ----------
     def create_borrow(self):
+        """Initializes the intelligent scanning interface for quick borrow/return operations."""
         ctk.CTkLabel(
             self.main_frame, text="🔫 Smart ISBN Scanner", font=("Arial", 24, "bold")
         ).pack(pady=20)
@@ -371,8 +385,6 @@ class LibraryApp(ctk.CTk):
             font=("Arial", 16),
         )
         self.scan_entry.pack(pady=15)
-
-        # 🔥 Bind Enter Key
         self.scan_entry.bind("<Return>", lambda event: self.scan_action())
 
         ctk.CTkButton(
@@ -390,6 +402,7 @@ class LibraryApp(ctk.CTk):
         self.status_label.pack(pady=20)
 
     def scan_action(self):
+        """Processes the scanned ISBN and triggers the correct flow (Borrow/Return)."""
         isbn = self.scan_entry.get().strip()
         if not isbn:
             messagebox.showwarning("Warning", "Enter ISBN!")
@@ -417,15 +430,15 @@ class LibraryApp(ctk.CTk):
             )
             self.quick_action(book)
 
-    # ---------- Borrowers Log (Audit) ----------
+    # ---------- Transaction Logs (Audit View) ----------
     def create_borrowers(self):
+        """Renders the historical audit log of all borrowing and returning transactions."""
         ctk.CTkLabel(
             self.main_frame, text="📜 Borrowing History Log", font=("Arial", 24, "bold")
         ).pack(pady=20)
         header_frame = ctk.CTkFrame(self.main_frame, height=40, fg_color="#2b2b2b")
         header_frame.pack(fill="x", padx=20, pady=5)
 
-        # 🔥 عمود الغرامة (Fine)
         headers = [
             ("ID", 50),
             ("Borrower", 130),
@@ -458,10 +471,12 @@ class LibraryApp(ctk.CTk):
                 else (book_obj.title if book_obj else "Unknown")
             )
 
-            status_txt = "✅ Returned" if rec.returned else "🟠 Active"
-            status_col = "#2cc985" if rec.returned else "#ffa500"
-            fine_txt = f"{rec.fine} EGP" if rec.fine > 0 else "-"
-            fine_col = "#ff4d4d" if rec.fine > 0 else "white"
+            status_txt, status_col = (
+                ("✅ Returned", "#2cc985") if rec.returned else ("🟠 Active", "#ffa500")
+            )
+            fine_txt, fine_col = (
+                (f"{rec.fine} EGP", "#ff4d4d") if rec.fine > 0 else ("-", "white")
+            )
 
             data = [
                 (str(rec.user_id), 50),
